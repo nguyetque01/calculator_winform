@@ -451,7 +451,6 @@
             this.Controls.Add(this.btnChangeSign);
             this.Name = "Calculator";
             this.Text = "Calculator - Nguyen Thi Nguyet Que - 162000012";
-            this.Load += new System.EventHandler(this.Calculator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
