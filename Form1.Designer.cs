@@ -40,7 +40,7 @@
             this.btnNum6 = new System.Windows.Forms.Button();
             this.btnNum5 = new System.Windows.Forms.Button();
             this.btnNum4 = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.btnBackspace = new System.Windows.Forms.Button();
             this.btnC = new System.Windows.Forms.Button();
             this.btnCE = new System.Windows.Forms.Button();
             this.btnPercent = new System.Windows.Forms.Button();
@@ -51,12 +51,12 @@
             this.btnNum9 = new System.Windows.Forms.Button();
             this.btnNum8 = new System.Windows.Forms.Button();
             this.btnNum7 = new System.Windows.Forms.Button();
-            this.btnDelHis = new System.Windows.Forms.Button();
+            this.btnClearHistory = new System.Windows.Forms.Button();
             this.btnFrac = new System.Windows.Forms.Button();
             this.lblHistory = new System.Windows.Forms.Label();
-            this.lblPreview = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.rtxtHistory = new System.Windows.Forms.RichTextBox();
+            this.lblEquation = new System.Windows.Forms.Label();
+            this.rtDisplayHistory = new System.Windows.Forms.RichTextBox();
+            this.txtDisplay = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnChangeSign
@@ -81,7 +81,7 @@
             this.btnNum0.TabIndex = 1;
             this.btnNum0.Text = "0";
             this.btnNum0.UseVisualStyleBackColor = true;
-            this.btnNum0.Click += new System.EventHandler(this.btnNum0_Click);
+            this.btnNum0.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnDecPoint
             // 
@@ -93,7 +93,7 @@
             this.btnDecPoint.TabIndex = 2;
             this.btnDecPoint.Text = ".";
             this.btnDecPoint.UseVisualStyleBackColor = true;
-            this.btnDecPoint.Click += new System.EventHandler(this.btnDecPoint_Click);
+            this.btnDecPoint.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnEquals
             // 
@@ -119,7 +119,7 @@
             this.btnPlus.TabIndex = 7;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = false;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
+            this.btnPlus.Click += new System.EventHandler(this.operations_Click);
             // 
             // btnNum3
             // 
@@ -131,7 +131,7 @@
             this.btnNum3.TabIndex = 6;
             this.btnNum3.Text = "3";
             this.btnNum3.UseVisualStyleBackColor = true;
-            this.btnNum3.Click += new System.EventHandler(this.btnNum3_Click);
+            this.btnNum3.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnNum2
             // 
@@ -143,7 +143,7 @@
             this.btnNum2.TabIndex = 5;
             this.btnNum2.Text = "2";
             this.btnNum2.UseVisualStyleBackColor = true;
-            this.btnNum2.Click += new System.EventHandler(this.btnNum2_Click);
+            this.btnNum2.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnNum1
             // 
@@ -155,7 +155,7 @@
             this.btnNum1.TabIndex = 4;
             this.btnNum1.Text = "1";
             this.btnNum1.UseVisualStyleBackColor = true;
-            this.btnNum1.Click += new System.EventHandler(this.btnNum1_Click);
+            this.btnNum1.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnMinus
             // 
@@ -168,7 +168,7 @@
             this.btnMinus.TabIndex = 11;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = false;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            this.btnMinus.Click += new System.EventHandler(this.operations_Click);
             // 
             // btnNum6
             // 
@@ -180,7 +180,7 @@
             this.btnNum6.TabIndex = 10;
             this.btnNum6.Text = "6";
             this.btnNum6.UseVisualStyleBackColor = true;
-            this.btnNum6.Click += new System.EventHandler(this.btnNum6_Click);
+            this.btnNum6.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnNum5
             // 
@@ -192,7 +192,7 @@
             this.btnNum5.TabIndex = 9;
             this.btnNum5.Text = "5";
             this.btnNum5.UseVisualStyleBackColor = true;
-            this.btnNum5.Click += new System.EventHandler(this.btnNum5_Click);
+            this.btnNum5.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnNum4
             // 
@@ -204,20 +204,20 @@
             this.btnNum4.TabIndex = 8;
             this.btnNum4.Text = "4";
             this.btnNum4.UseVisualStyleBackColor = true;
-            this.btnNum4.Click += new System.EventHandler(this.btnNum4_Click);
+            this.btnNum4.Click += new System.EventHandler(this.Numbers_Click);
             // 
-            // btnDel
+            // btnBackspace
             // 
-            this.btnDel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(256, 153);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(84, 49);
-            this.btnDel.TabIndex = 23;
-            this.btnDel.Text = "⌫";
-            this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            this.btnBackspace.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackspace.Location = new System.Drawing.Point(256, 153);
+            this.btnBackspace.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBackspace.Name = "btnBackspace";
+            this.btnBackspace.Size = new System.Drawing.Size(84, 49);
+            this.btnBackspace.TabIndex = 23;
+            this.btnBackspace.Text = "⌫";
+            this.btnBackspace.UseVisualStyleBackColor = false;
+            this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
             // btnC
             // 
@@ -269,7 +269,7 @@
             this.btnDevided.TabIndex = 19;
             this.btnDevided.Text = "÷";
             this.btnDevided.UseVisualStyleBackColor = false;
-            this.btnDevided.Click += new System.EventHandler(this.btnDevided_Click);
+            this.btnDevided.Click += new System.EventHandler(this.operations_Click);
             // 
             // btnSqrt
             // 
@@ -308,7 +308,7 @@
             this.btnTimes.TabIndex = 15;
             this.btnTimes.Text = "x";
             this.btnTimes.UseVisualStyleBackColor = false;
-            this.btnTimes.Click += new System.EventHandler(this.btnTimes_Click);
+            this.btnTimes.Click += new System.EventHandler(this.operations_Click);
             // 
             // btnNum9
             // 
@@ -320,7 +320,7 @@
             this.btnNum9.TabIndex = 14;
             this.btnNum9.Text = "9";
             this.btnNum9.UseVisualStyleBackColor = true;
-            this.btnNum9.Click += new System.EventHandler(this.btnNum9_Click);
+            this.btnNum9.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnNum8
             // 
@@ -332,7 +332,7 @@
             this.btnNum8.TabIndex = 13;
             this.btnNum8.Text = "8";
             this.btnNum8.UseVisualStyleBackColor = true;
-            this.btnNum8.Click += new System.EventHandler(this.btnNum8_Click);
+            this.btnNum8.Click += new System.EventHandler(this.Numbers_Click);
             // 
             // btnNum7
             // 
@@ -344,22 +344,23 @@
             this.btnNum7.TabIndex = 12;
             this.btnNum7.Text = "7";
             this.btnNum7.UseVisualStyleBackColor = true;
-            this.btnNum7.Click += new System.EventHandler(this.btnNum7_Click);
+            this.btnNum7.Click += new System.EventHandler(this.Numbers_Click);
             // 
-            // btnDelHis
+            // btnClearHistory
             // 
-            this.btnDelHis.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelHis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelHis.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelHis.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelHis.Image = global::Assignment1.Properties.Resources.trash;
-            this.btnDelHis.Location = new System.Drawing.Point(566, 405);
-            this.btnDelHis.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDelHis.Name = "btnDelHis";
-            this.btnDelHis.Size = new System.Drawing.Size(35, 36);
-            this.btnDelHis.TabIndex = 24;
-            this.btnDelHis.UseVisualStyleBackColor = false;
-            this.btnDelHis.Click += new System.EventHandler(this.btnDelHis_Click);
+            this.btnClearHistory.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnClearHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearHistory.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClearHistory.Image = global::Assignment1.Properties.Resources.trash;
+            this.btnClearHistory.Location = new System.Drawing.Point(525, 404);
+            this.btnClearHistory.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClearHistory.Name = "btnClearHistory";
+            this.btnClearHistory.Size = new System.Drawing.Size(35, 36);
+            this.btnClearHistory.TabIndex = 24;
+            this.btnClearHistory.UseVisualStyleBackColor = false;
+            this.btnClearHistory.Visible = false;
+            this.btnClearHistory.Click += new System.EventHandler(this.btnClearHistory_Click);
             // 
             // btnFrac
             // 
@@ -384,48 +385,51 @@
             this.lblHistory.TabIndex = 25;
             this.lblHistory.Text = "History";
             // 
-            // lblPreview
+            // lblEquation
             // 
-            this.lblPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreview.Location = new System.Drawing.Point(4, 61);
-            this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(336, 23);
-            this.lblPreview.TabIndex = 26;
-            this.lblPreview.Text = "0";
-            this.lblPreview.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblEquation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquation.Location = new System.Drawing.Point(4, 61);
+            this.lblEquation.Name = "lblEquation";
+            this.lblEquation.Size = new System.Drawing.Size(336, 23);
+            this.lblEquation.TabIndex = 26;
+            this.lblEquation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblResult
+            // rtDisplayHistory
             // 
-            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.Location = new System.Drawing.Point(4, 84);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(346, 49);
-            this.lblResult.TabIndex = 27;
-            this.lblResult.Text = "0";
-            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rtDisplayHistory.BackColor = System.Drawing.SystemColors.Control;
+            this.rtDisplayHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtDisplayHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtDisplayHistory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.rtDisplayHistory.Location = new System.Drawing.Point(355, 51);
+            this.rtDisplayHistory.Name = "rtDisplayHistory";
+            this.rtDisplayHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtDisplayHistory.Size = new System.Drawing.Size(200, 335);
+            this.rtDisplayHistory.TabIndex = 28;
+            this.rtDisplayHistory.Text = "";
             // 
-            // rtxtHistory
+            // txtDisplay
             // 
-            this.rtxtHistory.BackColor = System.Drawing.SystemColors.Control;
-            this.rtxtHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtHistory.ForeColor = System.Drawing.SystemColors.Control;
-            this.rtxtHistory.Location = new System.Drawing.Point(355, 37);
-            this.rtxtHistory.Name = "rtxtHistory";
-            this.rtxtHistory.Size = new System.Drawing.Size(208, 401);
-            this.rtxtHistory.TabIndex = 28;
-            this.rtxtHistory.Text = "";
+            this.txtDisplay.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisplay.Location = new System.Drawing.Point(4, 87);
+            this.txtDisplay.Name = "txtDisplay";
+            this.txtDisplay.Size = new System.Drawing.Size(336, 55);
+            this.txtDisplay.TabIndex = 29;
+            this.txtDisplay.Text = "0";
+            this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 450);
-            this.Controls.Add(this.rtxtHistory);
-            this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.lblPreview);
+            this.ClientSize = new System.Drawing.Size(567, 450);
+            this.Controls.Add(this.txtDisplay);
+            this.Controls.Add(this.rtDisplayHistory);
+            this.Controls.Add(this.lblEquation);
             this.Controls.Add(this.lblHistory);
-            this.Controls.Add(this.btnDelHis);
-            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnClearHistory);
+            this.Controls.Add(this.btnBackspace);
             this.Controls.Add(this.btnC);
             this.Controls.Add(this.btnCE);
             this.Controls.Add(this.btnPercent);
@@ -450,7 +454,9 @@
             this.Controls.Add(this.btnNum0);
             this.Controls.Add(this.btnChangeSign);
             this.Name = "Calculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator - Nguyen Thi Nguyet Que - 162000012";
+            this.Load += new System.EventHandler(this.Calculator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +475,7 @@
         private System.Windows.Forms.Button btnNum6;
         private System.Windows.Forms.Button btnNum5;
         private System.Windows.Forms.Button btnNum4;
-        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnBackspace;
         private System.Windows.Forms.Button btnC;
         private System.Windows.Forms.Button btnCE;
         private System.Windows.Forms.Button btnPercent;
@@ -481,11 +487,11 @@
         private System.Windows.Forms.Button btnNum9;
         private System.Windows.Forms.Button btnNum8;
         private System.Windows.Forms.Button btnNum7;
-        private System.Windows.Forms.Button btnDelHis;
+        private System.Windows.Forms.Button btnClearHistory;
         private System.Windows.Forms.Label lblHistory;
-        private System.Windows.Forms.Label lblPreview;
-        private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.RichTextBox rtxtHistory;
+        private System.Windows.Forms.Label lblEquation;
+        private System.Windows.Forms.RichTextBox rtDisplayHistory;
+        private System.Windows.Forms.TextBox txtDisplay;
     }
 }
 
